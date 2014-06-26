@@ -16,13 +16,13 @@ public class KingForge {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.info(Messages.MOD_LOADED);
+        LogHelper.info(Messages.MOD_PREINIT);
 
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        LogHelper.info(Messages.MOD_LOADED);
+        LogHelper.info(Messages.MOD_INIT);
     }
 
     @Mod.EventHandler

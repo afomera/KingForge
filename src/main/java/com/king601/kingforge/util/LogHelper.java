@@ -6,7 +6,8 @@ import org.apache.logging.log4j.Level;
 
 public class LogHelper {
 
-    // Need to credit Pahimar soon as his code was a major reference for this
+    // Need to credit Pahimar as his code was a major reference for this
+    // Thanks Pahimar of EE3 http://github.com/Pahimar for being a great reference
     public static void log(Level logLevel, Object object) {
         FMLLog.log(Reference.MOD_NAME, logLevel, String.valueOf(object));
     }
