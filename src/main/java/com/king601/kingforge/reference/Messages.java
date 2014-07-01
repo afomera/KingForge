@@ -13,4 +13,6 @@ public class Messages {
     //Displays message in console during post initialization
     public static final String MOD_LOADED = "World Domination is complete";
 
+    public static final String CONFIG_LOADING = "Config file being loading";
+
 }
