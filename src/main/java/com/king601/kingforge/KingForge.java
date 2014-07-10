@@ -1,17 +1,18 @@
 package com.king601.kingforge;
 
-import com.king601.kingforge.configuration.ConfigurationHandler;
+import com.king601.kingforge.handler.ConfigurationHandler;
 import com.king601.kingforge.proxy.IProxy;
 import com.king601.kingforge.reference.Messages;
 import com.king601.kingforge.reference.Reference;
 import com.king601.kingforge.util.LogHelper;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class KingForge {
 
     @Mod.Instance(Reference.MOD_ID)
@@ -27,7 +28,7 @@ public class KingForge {
         //Load the config file
         LogHelper.info(Messages.CONFIG_LOADING);
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-
+        FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 
     }
 
@@ -35,7 +36,6 @@ public class KingForge {
     public void init(FMLInitializationEvent event) {
 
         LogHelper.info(Messages.MOD_INIT);
-
 
     }
 
