@@ -1,6 +1,8 @@
 package com.king601.kingforge;
 
 import com.king601.kingforge.handler.ConfigurationHandler;
+import com.king601.kingforge.init.ModBlocks;
+import com.king601.kingforge.init.ModItems;
 import com.king601.kingforge.proxy.IProxy;
 import com.king601.kingforge.reference.Messages;
 import com.king601.kingforge.reference.Reference;
@@ -29,6 +31,10 @@ public class KingForge {
         LogHelper.info(Messages.CONFIG_LOADING);
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+
+        //Register Items
+        ModItems.init();
+        ModBlocks.init();
 
     }
 
